@@ -1,0 +1,75 @@
+{% extends 'base.html' %} 
+{% block title %}Home - Welome to home age{% endblock title %}
+
+{% block content %}
+<h1>My name is : {{name}}</h1>
+{% for course in courseList %}
+<h4>{{forloop.counter}} : {{course}}</h4>
+{% endfor %} {% for item in student_details %}
+<h3>{{forloop.counter}} - {{item}}</h3>
+{% endfor %} {% for list in student_details %}
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Study</th>
+  </tr>
+  <tr>
+    <td>{{list.name}}</td>
+    <td>{{list.phone}}</td>
+    <td>{{list.study}}</td>
+  </tr>
+</table>
+
+{% endfor %}
+<div class="items">
+  {% for n in numbers %} {% if n > 20 %}
+  <div>{{n}}</div>
+  {% endif %} {% endfor %}
+</div>
+<div>
+  {% if numbers|length > 0 %} Number is greater then 0 {% else %} No Data Found{% endif %}
+</div>
+
+{% for n in serviceData %}
+<div class="card m-2" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{n.service_icon}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{n.service_title}}</h6>
+    <p class="card-text">{{n.service_des|safe}}</p>
+    {% comment %} <p class="card-text">{{n.service_des|slice:"0:10"}}</p> {% endcomment %}
+    {% comment %} <p class="card-text">{{n.service_des|upper}}</p> {% endcomment %}
+  </div>
+</div>
+{% endfor %}
+<nav aria-label="...">
+  <ul class="pagination">
+    {% if serviceData.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="/?page=1" tabindex="-1">First</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="/?page={{serviceData.previous_page_number}}" tabindex="-1">Previous</a>
+    </li>
+    {% for n in total_page_list %}
+    <li class="page-item"><a class="page-link" href="/?page={{n}}">{{n}}</a></li>
+    {% endfor %}
+    {% endif %}
+    {% if serviceData.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="/?page={{serviceData.next_page_number}}">Next</a>
+    </li>
+    {% endif %}
+    <li class="page-item">
+      <a class="page-link" href="/?page={{last_page}}">Last</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+  {% for news in newsData %}
+  <a href="/news/{{news.news_slug}}">{{news.news_title}}</a> &nbsp; &nbsp;  &nbsp;
+  {% endfor %}
+</div>
+
+{% endblock content %}

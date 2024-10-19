@@ -1,0 +1,45 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/course/' %}active{% endif %}" href="{% url 'course' %}">Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/contect/' %}active{% endif %}" href="{% url 'contect' %}">Contect</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/calculator/' %}active{% endif %}" href="{% url 'calculator' %}">Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/even-odd/' %}active{% endif %}" href="{% url 'even_odd' %}">Even/Odd</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/marksheet/' %}active{% endif %}" href="{% url 'marksheet' %}">Marksheet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/forms/' %}active{% endif %}" href="{% url 'forms' %}">Form</a>
+          </li>
+          <li class="nav-item">
+            {% comment %} <a class="nav-link {% if request.path == '/news/' %}active{% endif %}" href="{% url 'news' %}">News</a> {% endcomment %}
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" name="servicename" id="servicename" aria-label="Search">
+          <button class="btn btn-outline-success" name="servicename" id="servicename" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>

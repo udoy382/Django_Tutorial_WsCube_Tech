@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Marksheet</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static '/css/calculator.css' %}">
+    </head>
+    <body>
+    {% include "header.html" %}
+    <h1>Check Marksheet</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <label for="s1">Subject1</label>
+                    <input type="text" name="s1" class="form-control" placeholder="Enter Subject1">
+                    <label for="s2">Subject2</label>
+                    <input type="text" name="s2" class="form-control" placeholder="Enter Subject2">
+                    <label for="s3">Subject3</label>
+                    <input type="text" name="s3" class="form-control" placeholder="Enter Subject3">
+                    <label for="s4">Subject4</label>
+                    <input type="text" name="s4" class="form-control" placeholder="Enter Subject4">
+                    <label for="s5">Subject5</label>
+                    <input type="text" name="s5" class="form-control" placeholder="Enter Subject5">
+                    <button type="submit">Marksheet</button> <br>
+                    <label for="total">Total</label>
+                    <input type="text" name="total" class="form-control" placeholder="Total" value="{{total}}">
+                    <label for="percentage">Percentage</label>
+                    <input type="text" name="percentage" class="form-control" placeholder="Percentage" value="{{per}}">
+                    <label for="division">Division</label>
+                    <input type="text" name="division" class="form-control" placeholder="Division" value="{{div}}">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

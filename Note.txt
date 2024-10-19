@@ -1,0 +1,35 @@
+Run Server : python manage.py runserver
+Migrate : python manage.py migrate
+Create Super User : python manage.py createsuperuser
+
+--------------------
+
+Username : udoy
+Email : srudoy436@gmail.com
+Password : udoy2299436
+
+---------------------
+
+
+Types of Routs : int / str / slug
+
+
+make a new app : python manage.py startapp service
+
+--> python manage.py makemigrationgs
+--> python manage.py migrate
+
+
+
+{{request.path}}
+
+
+
+------------------------------
+for use TinyMCE:
+1. pip install django-tinymce
+2. install in setting like ==> "tinymce"
+------------------------------
+
+
+pip install django-autoslug

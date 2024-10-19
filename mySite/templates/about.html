@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}About Page{% endblock title %}
+
+{% block content %}
+
+{% for item in cardData %}
+<div class="container m-5">
+    <div class="card" style="width: 18rem;">
+        <img src="{{item.card_image}}" class="card-img-top" id="card_image" name="card_image" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" id="card_title" name="card_title">{{item.card_title}}</h5>
+          <p class="card-text" id="card_desc" name="card_desc">{{item.card_desc}}</p>
+          <a href="#" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+</div>
+{% endfor %}
+
+{% endblock content %}

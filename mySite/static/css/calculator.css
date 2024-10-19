@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color: #f6eee3;
+}
+
+h1{
+    text-align: center;
+}
+
+input{
+    margin: 10px 0;
+}
+
+button{
+    padding: 5px 10px;
+    font-weight: bold;
+    margin: 10px 0;
+}

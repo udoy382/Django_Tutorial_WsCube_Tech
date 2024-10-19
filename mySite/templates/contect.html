@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% include "header.html" %}
+{% block title %}Contect Us{% endblock title %}
+
+{% block content %}
+<h1 class="text-center">User Form</h1>
+
+<div class="container m-5">
+    <form method="post" action="{% url 'submitform' %}">
+      {% csrf_token %}
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" value="{{name}}" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" value="{{email}}" name="email" placeholder="Enter Your Email ">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" value="{{password}}" id="password" name="password" placeholder="Enter Your Password ">
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+      <h1>{{output}}</h1>
+</div>
+<div>
+  {{form}}
+</div>
+{% endblock content %}
